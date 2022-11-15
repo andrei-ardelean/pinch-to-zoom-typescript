@@ -23,7 +23,7 @@ function App() {
               id="frontImage"
               onLoad={handlePinchToZoom}
             />
-            <div id="frontImageOpacityLayer" className="opacityLayerLight" />
+            <div id="frontImageLayer" className="opacityLayer" />
           </div>
         </div>
         <div className="backSection">
@@ -35,7 +35,7 @@ function App() {
               id="backImage"
               onLoad={handlePinchToZoom}
             />
-            <div id="backImageOpacityLayer" className="opacityLayerDark" />
+            <div id="backImageLayer" className="opacityLayer" />
           </div>
         </div>
       </div>

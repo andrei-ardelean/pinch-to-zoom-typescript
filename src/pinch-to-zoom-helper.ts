@@ -7,11 +7,11 @@
 
 export const handlePinchToZoom = (event: any): void => {
   const element: any = document.getElementById(event.target.id);
-  const opacityLayer: any = document.getElementById(`${event.target.id}OpacityLayer`);
+  const opacityLayer: any = document.getElementById(`${event.target.id}Layer`);
   const maxScale = 4;
   const startPoint: any = {};
 
-  element.addEventListener("touchstart", (touchEvent: any) => {
+  element.addEventListener("touchstart", (touchEvent: TouchEvent) => {
     if (touchEvent.touches.length === 2) {
       touchEvent.preventDefault(); // prevent page scroll
 
@@ -22,7 +22,7 @@ export const handlePinchToZoom = (event: any): void => {
     }
   });
 
-  element.addEventListener("touchmove", (touchEvent: any) => {
+  element.addEventListener("touchmove", (touchEvent: TouchEvent) => {
     if (touchEvent.touches.length === 2) {
       touchEvent.preventDefault(); // prevent page scroll
 
@@ -32,8 +32,8 @@ export const handlePinchToZoom = (event: any): void => {
       const elementScale = Math.min(Math.max(1, scale), maxScale);
 
       // calculate how much the fingers have moved on the X and Y axis (x2 for accelarated movement)
-      const deltaX = ((touchEvent.touches[0].pageX + touchEvent.touches[1].pageX) / 2 - startPoint.x) * 2;
-      const deltaY = ((touchEvent.touches[0].pageY + touchEvent.touches[1].pageY) / 2 - startPoint.y) * 2;
+      const deltaX = (touchEvent.touches[0].pageX + touchEvent.touches[1].pageX) / 2 - startPoint.x;
+      const deltaY = (touchEvent.touches[0].pageY + touchEvent.touches[1].pageY) / 2 - startPoint.y;
 
       // transform the image to make it grow and move with fingers
       const transform = `translate3d(${deltaX}px, ${deltaY}px, 0) scale(${elementScale})`;

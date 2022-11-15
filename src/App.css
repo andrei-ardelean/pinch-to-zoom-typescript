@@ -54,10 +54,10 @@
   opacity: 0.5;
 }
 
-.opacityLayerLight {
+.opacityLayer {
   background-color: #18181a;
 }
 
-.opacityLayerDark {
+.darkContainer .opacityLayer {
   background-color: #18181a;
 }
