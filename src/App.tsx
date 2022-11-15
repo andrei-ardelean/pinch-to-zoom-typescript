@@ -2,9 +2,18 @@ import './App.css';
 import { handlePinchToZoom } from './pinch-to-zoom-helper';
 
 function App() {
+  const queryString = window.location.search;
+  const parameters = new URLSearchParams(queryString);
+  const theme = parameters.get('theme');
+
+  let classname = "container";
+  if (theme && theme === "1") {
+    classname = "container darkContainer";
+  }
+
   return (
     <div className="App">
-      <div className="container">
+      <div className={classname}>
         <div className="frontSection">
           <div>Front view</div>
           <div className="previewImage">

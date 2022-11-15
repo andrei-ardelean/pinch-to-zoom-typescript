@@ -16,6 +16,11 @@
   padding: 12px;
 }
 
+.darkContainer {
+  background-color: #18181a;
+  color: #fff;
+}
+
 .frontSection, .backSection {
   display: flex;
   flex-direction: column;
