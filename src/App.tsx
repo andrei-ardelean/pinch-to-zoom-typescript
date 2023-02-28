@@ -11,11 +11,18 @@ function App() {
     classname = "container darkContainer";
   }
 
+  const handleOnClick = () => {
+    if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+      console.log("Let's get this party started");
+      navigator.mediaDevices.getUserMedia({video: true});
+    }
+  }
+
   return (
     <div className="App">
       <div className={classname}>
         <div>
-          <input type={"file"} />
+          <input type={"file"} onClick={handleOnClick} />
         </div>
         <div className="frontSection">
           <div>Front view</div>
