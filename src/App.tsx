@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <div className={classname}>
         <div>
-          <input type={"file"} onClick={handleOnClick} accept="image/*;capture=camera"/>
+          <input type={"file"} onClick={handleOnClick} accept="image/*,capture=camera"/>
         </div>
         <div className="frontSection">
           <div>Front view</div>
