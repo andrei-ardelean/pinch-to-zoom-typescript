@@ -13,8 +13,16 @@ function App() {
 
   const handleOnClick = () => {
     if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-      console.log("Let's get this party started");
-      navigator.mediaDevices.getUserMedia({video: true});
+      // navigator.mediaDevices.getUserMedia({video: true});
+      navigator.mediaDevices.getUserMedia({video: true})
+        .then((stream) => {
+          /* use the stream */
+          alert(stream);
+        })
+        .catch((err) => {
+          /* handle the error */
+          alert(err);
+        });
     }
   }
 
