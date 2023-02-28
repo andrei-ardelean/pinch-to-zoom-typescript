@@ -14,15 +14,16 @@ function App() {
   const handleOnClick = () => {
     if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
       // navigator.mediaDevices.getUserMedia({video: true});
-      navigator.mediaDevices.getUserMedia({video: true})
-        .then((stream) => {
-          /* use the stream */
-          alert(stream);
-        })
-        .catch((err) => {
-          /* handle the error */
-          alert(err);
-        });
+      // navigator.mediaDevices.getUserMedia({video: true})
+      //   .then((stream) => {
+      //     /* use the stream */
+      //     alert(stream);
+      //   })
+      //   .catch((err) => {
+      //     /* handle the error */
+      //     alert(err);
+      //   });
+
     }
   }
 
@@ -30,7 +31,7 @@ function App() {
     <div className="App">
       <div className={classname}>
         <div>
-          <input type={"file"} onClick={handleOnClick} />
+          <input type={"file"} onClick={handleOnClick} accept="image/*;capture=camera"/>
         </div>
         <div className="frontSection">
           <div>Front view</div>
