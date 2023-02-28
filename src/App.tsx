@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <div className={classname}>
         <div>
-          <input type={"file"} accept={"image/*"} />
+          <input type={"file"} />
         </div>
         <div className="frontSection">
           <div>Front view</div>
